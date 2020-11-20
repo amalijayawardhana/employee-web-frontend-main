@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Employee WEB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Popper JS-->
+    <!--Sweet alert2-->
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="node_modules/admin-lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="node_modules/admin-lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="node_modules/admin-lte/dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/manage-Employee-style.css">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="/" class="brand-link">
+            <h3 class="text-center">EMPLOYEE DETAILS</h3>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                    <li class="nav-item">
+                        <a href="manage-employees.html" class="nav-link">
+                            <i class="nav-icon fas fa-user"></i>
+                            <p>
+                                Manage Employees
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="manage-family-members.html" class="nav-link">
+                            <i class="nav-icon fas fa-list"></i>
+                            <p>
+                                Manage Family Members
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">Manage Employees</h1>
+                    </div><!-- /.col -->
+
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <!-- Main row -->
+                <div class="row">
+                    <section class="col-12 col-lg-6">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Employee Information</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+<!--                            x-www-form-urlencoded-->
+                            <form role="form" action="#" method="post" enctype="application/json">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="txt-code">Employee Code</label>
+                                        <input name="id" type="text" class="form-control" id="txt-code" placeholder="Enter code" data-toggle="tooltip" data-placement="right" title="Employee ID should have the format EXX where X is a number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txt-initials">Initials</label>
+                                        <input name="id" type="text" class="form-control" id="txt-initials" placeholder="Enter initials" data-toggle="tooltip" data-placement="right" title="Employee ID should have the format CXXX where X is a number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txt-first-name">Employee First name</label>
+                                        <input name="First name" type="text" class="form-control" id="txt-first-name" placeholder="Enter First name" data-toggle="tooltip" data-placement="right" title="First Name length should not exceed 50 characters">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txt-surname">Employee Surname</label>
+                                        <input name="Surname" type="text" class="form-control" id="txt-surname" placeholder="Enter Surname" data-toggle="tooltip" data-placement="right" title="Surname length should not exceed 50 characters">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txt-address1">Employee Address1</label>
+                                        <input name="address1" type="text" class="form-control" id="txt-address1" placeholder="Enter address1" data-toggle="tooltip" data-placement="right" title="Address length should not exceed 100 characters">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txt-address2">Employee Address2</label>
+                                        <input name="address2" type="text" class="form-control" id="txt-address2" placeholder="Enter address1" data-toggle="tooltip" data-placement="right" title="Address length should not exceed 100 characters">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txt-date">Date of Birth</label>
+                                        <input name="txt-date" type="text" class="form-control" id="txt-date"
+                                               placeholder="Enter birthday">
+                                               <input name="txt-" type="text" class="form-control" id="txt-date"
+                                               placeholder="Enter birthday">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Status</label>
+                                        <select id="cmb-status" class="custom-select">
+                                            <option value="casc">Active</option>
+                                            <option value="casc">Inactive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+
+                                <div class="card-footer">
+                                    <button id="btn-save" type="button" class="btn btn-primary">Save</button>
+                                    <button id="btn-clear" type="reset" class="btn btn-warning">Reset</button>
+                                    <button class="btn btn-warning">
+                                        <a href="manage-family-members.html" class="nav-link">
+                                            <i class="nav-icon fas fa-user"></i>  Add Family Members
+                                        </a>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                    <section class="col-12 col-lg-6">
+                        <div id="tbl-card" class="card">
+                            <div class="card-body">
+                                <table id="tbl-Employees" class="table table-bordered table-hover">
+                                    <thead>
+                                    <th>Code</th>
+                                    <th>Employee Name</th>
+                                    <th>Employee Address</th>
+                                    <th>Date of Birth</th>
+                                    <th></th>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <td colspan="5">No content to show</td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- /.row (main row) -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <strong>Copyright &copy; 2020.</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 1.0.0
+        </div>
+    </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="node_modules/admin-lte/plugins/jquery/jquery.min.js"></script>
+<script src="js/manage-Employees-controller.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="node_modules/admin-lte/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!--Popper JS-->
+<script src="node_modules/admin-lte/plugins/popper/umd/popper.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!--Sweet alert2-->
+<script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+<!-- DataTables -->
+<script src="node_modules/admin-lte/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="node_modules/admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="node_modules/admin-lte/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="node_modules/admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<!-- AdminLTE App -->
+<script src="node_modules/admin-lte/dist/js/adminlte.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<!--<script src="node_modules/admin-lte/dist/js/pages/dashboard.js"></script>-->
+<!-- AdminLTE for demo purposes -->
+<script src="node_modules/admin-lte/dist/js/demo.js"></script>
+</body>
+</html>
